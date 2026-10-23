@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Flip the Chip: try computer science</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Chakra+Petch:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Flip the Chip</h1>
+    <p class="tagline">Don’t just read about computer science, try it. Flip chips to train an AI, code a game jump, program a robot and more. No experience needed. Play as many chips as you like, then finish to see your results.</p>
+  </header>
+
+  <section class="console" aria-label="Game status">
+    <button class="btn" id="start">Start game</button>
+    <div class="readout"><small>Stars</small><b id="stars">0</b></div>
+    <div class="readout"><small>Chips cleared</small><b id="cleared">0 / 12</b></div>
+    <button class="btn ghost" id="finish" hidden>🏁 Finish &amp; see results</button>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <button class="btn ghost" id="mute" aria-pressed="false">🔊 Sound on</button>
+  </section>
+  <div class="power" aria-hidden="true"><div id="powerFill"></div></div>
+
+  <div id="board" class="idle" aria-label="Game board"></div>
+
+  <p class="legend">
+    <span>🧪 hands-on lab: +2 stars</span>
+    <span>❓ quick question: +1 star</span>
+    <span>💾 saved work: +1 star</span>
+    <span>🐛 bug: −1 star</span>
+  </p>
+</div>
+
+<dialog id="qDialog" aria-labelledby="qTitle">
+  <p class="field-tag" id="qField"></p>
+  <h2 id="qTitle"></h2>
+  <div id="qBody"></div>
+  <div id="qWhy"></div>
+</dialog>
+
+<dialog id="endDialog" aria-labelledby="endTitle">
+  <h2 id="endTitle"></h2>
+  <p class="result-stars" id="endStars"></p>
+  <div id="endPick"></div>
+  <div id="endExplored"></div>
+  <div class="row">
+    <button class="btn ghost" id="endClose">Look at the board</button>
+    <button class="btn" id="endAgain">Play again</button>
+  </div>
+</dialog>
+
+<script src="Data.js"></script>
+<script src="Utils.js"></script>
+<script src="Labs.js"></script>
+<script src="Card.js"></script>
+<script src="Main.js"></script>
+</body>
+</html>
